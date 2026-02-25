@@ -8,26 +8,38 @@ import time
 from pyrogram import *
 from pyrogram.types import * 
 
-PHONE_NUMBER_TEXT = (
-    " ✦𝗛𝗘𝗬..! 𝗠𝗔𝗦𝗧𝗘𝗥..!!👋!\n\n✦ 𝗜'𝗠 𝗔 𝗣𝗢𝗪𝗘𝗥𝗙𝗨𝗟 𝗭𝗘𝗨𝗦 𝗜𝗗 𝗨𝗦𝗘𝗥𝗕𝗢𝗧 𝗛𝗘𝗟𝗣𝗘𝗥?\n\n‣ 𝗜 𝗖𝗔𝗡 𝗛𝗘𝗟𝗣 𝗬𝗢𝗨 𝗧𝗢 𝗛𝗢𝗦𝗧 𝗬𝗢𝗨𝗥 𝗟𝗘𝗙𝗧 𝗖𝗟𝗜𝗘𝗡𝗧𝗦.\n\n‣ 𝗛𝗘𝗟𝗣𝗘𝗥 ✦: [sᴇssɪᴏɴ sᴛʀɪɴɢ ɢᴇɴᴇʀᴀᴛᴇʀ ʀᴏʙᴏᴛ](https://t.me/king_string_session_bot) \n\n‣ 𝗧𝗛𝗜𝗦 𝗜𝗦 𝗦𝗣𝗘𝗖𝗜𝗔𝗟𝗟𝗬 𝗙𝗢𝗥 𝗚𝗔𝗡𝗗𝗨 𝗣𝗘𝗢𝗣𝗟𝗘'𝗦(ʟᴀᴢʏ)\n\n‣ 𝗡𝗢𝗪 /clone {send your PyroGram ᴠ2 String Session}"
-)
-
+PHONE_NUMBER_TEXT = """
+┌────── ˹ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ˼ ⏤͟͟͞͞‌‌‌‌★
+┆◍ ʜᴇʏ, ɪ ᴀᴍ : [𝐓ɪᴛᴀɴ × 𝐔sᴇʀʙᴏᴛ](https://t.me/TitanUserbot)
+┆◍ ɴɪᴄᴇ ᴛᴏ ᴍᴇᴇᴛ ʏᴏᴜ ᴅᴇᴀʀ !!
+└────────────────────────•
+ ❖ ɪ ᴀ ᴘᴏᴡᴇʀғᴜʟ & ᴜsᴇғᴜʟʟ ᴜsᴇʀʙᴏᴛ.
+ ❖ ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ᴍᴇ ғᴏʀ ʀᴀɪᴅ sᴘᴀᴍ.
+ ❖ ɪ ᴄᴀɴ ʙᴏᴏsᴛ ʏᴏᴜʀ ɪᴅ ᴡɪᴛʜ ᴀɴɪᴍᴀᴛɪᴏɴ.
+ ❖ 𝗡𝗢𝗪 /clone {send your PyroGram ᴠ2 String Session}.
+ •────────────────────────•
+ ❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ :- [Ꭲ ɪ ᴛ ᴀ ɴ](https://t.me/YOURX_TITAN) 🚩
+ •────────────────────────•
+"""
 @app.on_message(filters.command("start"))
 async def hello(client: app, message):
     buttons = [
-           [
-                InlineKeyboardButton("⚡𝙾𝚆𝙽𝙴𝚁 💕⚡", url="t.me/YOURX_TITAN"),
-            ],
-            [
-                InlineKeyboardButton("⚡𝙲𝙷𝙰𝙽𝙽𝙴𝙻 💕⚡", url="t.me/YOURX_SHADOW"),
-            ],
-            [
-                InlineKeyboardButton("⚡𝚂𝚄𝙿𝙿𝙾𝚁𝚃 💕⚡", url="https://t.me/+A0co2NTD75lhZTM9"),
-            ],
-            ]
+    [
+        InlineKeyboardButton("𝐃єᴠєʟᴏᴘєʀ 🎀", url="https://t.me/YOURX_TITAN"),
+        InlineKeyboardButton("𝐂ʜᴀɴɴᴇʟ 🥀", url="https://t.me/YOURX_SHADOW"),
+    ],
+    [
+        InlineKeyboardButton("𝐒ᴜᴘᴘᴏʀᴛ 🌿", url="https://t.me/+A0co2NTD75lhZTM9"),
+    ],
+    ]
     reply_markup = InlineKeyboardMarkup(buttons)
-    await client.send_photo(message.chat.id, ALIVE_PIC, caption=PHONE_NUMBER_TEXT, reply_markup=reply_markup)
-
+    await client.send_photo(
+    message.chat.id,
+    ALIVE_PIC,
+    caption=PHONE_NUMBER_TEXT,
+    reply_markup=reply_markup,
+    parse_mode="markdown"
+    )
 # © By itzshukla Your motherfucker if uh Don't gives credits.
 @app.on_message(filters.command("clone"))
 async def clone(bot: app, msg: Message):
